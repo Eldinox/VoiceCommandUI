@@ -36,4 +36,13 @@ public class XROffsetGrabInteractable : XRGrabInteractable
 
         base.OnSelectEntering(interactor);
     }
+
+    protected override void OnSelectExited(XRBaseInteractor interactor)
+    {
+        if (transform.parent.TryGetComponent<ObjectInteraction>(out ObjectInteraction _parentObject))
+        {
+            _parentObject.SetNewValue();
+        }
+        base.OnSelectExited(interactor);
+    }
 }

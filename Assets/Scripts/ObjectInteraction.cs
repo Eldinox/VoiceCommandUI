@@ -22,17 +22,19 @@ public class ObjectInteraction : MonoBehaviour
     public float valRange;
     public Text valText;
 
+    private bool interactionActive;
+
     // Start is called before the first frame update
     void Start()
     {
         if (valDisplay)
         {
-            valText = valDisplay.transform.GetComponentInChildren<Text>();
+            valText = valDisplay.transform.Find("ValText").GetComponent<Text>();
         }
 
-        if (transform.tag == "Fader")
+        if (grabTransform.TryGetComponent<XRGrabInteractable>(out XRGrabInteractable _grabObj))
         {
-            if (grabTransform.TryGetComponent<XRGrabInteractable>(out XRGrabInteractable _grabObj))
+            if (transform.tag == "Fader")
             {
                 startPos = _grabObj.transform.position.y;
                 if (_grabObj.transform.TryGetComponent<ConfigurableJoint>(out ConfigurableJoint _joint))
@@ -41,13 +43,9 @@ public class ObjectInteraction : MonoBehaviour
                 }
                 SetPosValue();
             }
-        }
-        else if(transform.tag == "Potentiometer")
-        {
-            if (grabTransform.TryGetComponent<XROffsetGrabInteractable>(out XROffsetGrabInteractable _grabObj))
+            else if (transform.tag == "Potentiometer")
             {
                 startRot = _grabObj.transform.rotation.y;
-                Debug.Log(startRot);
                 if (_grabObj.transform.TryGetComponent<HingeJoint>(out HingeJoint _joint))
                 {
                     Quaternion _currentRotEuler = _grabObj.transform.rotation;
@@ -55,24 +53,25 @@ public class ObjectInteraction : MonoBehaviour
                     Quaternion _maxRotEuler = _currentRotEuler;
                     _minRotEuler = Quaternion.Euler(_joint.limits.min, 0, 0) * _minRotEuler;
                     _maxRotEuler = Quaternion.Euler(_joint.limits.max, 0, 0) * _maxRotEuler;
-                    Debug.Log(_minRotEuler);
-                    Debug.Log(_maxRotEuler);
-                    valRange = _maxRotEuler.x - _minRotEuler.x; 
+                    valRange = _maxRotEuler.x - _minRotEuler.x;
                 }
                 SetRotValue();
             }
+            else
+            {
+                Debug.Log("ObjectInteraction.cs: Tag not set on " + transform.name + ".");
+            }
         }
-        else
-        {
-            Debug.Log("ObjectInteraction.cs: Tag not set on " + transform.name + ".");
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
         SetCurrentOffset();
+
     }
+
 
     private void SetCurrentOffset()
     {
@@ -102,6 +101,38 @@ public class ObjectInteraction : MonoBehaviour
         {
             valText.text = controllerRotVal.ToString();
         }
+    }
+    public float GetCurrentValue()
+    {
+        float _currentVal;
+        if (transform.tag == "Potentiometer")
+        {
+            _currentVal = controllerRotVal;
+        }
+        else if (transform.tag == "Fader")
+        {
+            _currentVal = controllerPosVal;
+        }
+        else
+        {
+            _currentVal = 0;
+        }
+
+        return _currentVal;
+    }
+
+    public void SetNewValue()
+    {
+        MainScript _Main = GameObject.Find("[Main]").GetComponent<MainScript>();
+        if (_Main.currentAdjustableObj != null)
+        {
+            if (transform.name == _Main.currentAdjustableObj.name)
+            {
+
+                _Main.SetValueOfUser(GetCurrentValue());
+            }
+        }
+
     }
 
 }
