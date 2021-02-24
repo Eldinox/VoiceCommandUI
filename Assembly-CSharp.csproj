@@ -63,12 +63,12 @@
     <Compile Include="Assets\_emigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\_emigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\_emigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\Scripts\MainScript.cs" />
+    <Compile Include="Assets\Scripts\ShuffleListExtension.cs" />
     <Compile Include="Assets\_emigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
     <Compile Include="Assets\Scripts\HandPresence.cs" />
     <Compile Include="Assets\_emigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Scripts\ObjectInteraction.cs" />
-    <Compile Include="Assets\Scripts\MainScript.cs" />
-    <Compile Include="Assets\Scripts\ShuffleListExtension.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -79,6 +79,7 @@
      <None Include="Assets\_emigiant\DOTween\DOTween.XML" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\Results\ID1415224_72.txt" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
@@ -88,6 +89,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\Results\test.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\_emigiant\DOTween\readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />

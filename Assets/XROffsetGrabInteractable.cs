@@ -5,8 +5,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class XROffsetGrabInteractable : XRGrabInteractable
 {
+    [Header("Set Parent of Interactable")]
+    public GameObject parentObj;
+
+    [Header("Set Interaction Audio Source")]
+    public AudioSource interactionAudio;
+
     private Vector3 initialAttachLocalPos;
     private Quaternion initialAttachLocalRot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +26,11 @@ public class XROffsetGrabInteractable : XRGrabInteractable
 
         initialAttachLocalPos = attachTransform.localPosition;
         initialAttachLocalRot = attachTransform.localRotation;
+
+        if (!parentObj)
+        {
+            Debug.Log("XROffsetGrabInteractable.cs: Set parent for gameObject " + transform.name + "!");
+        }
     }
 
     protected override void OnSelectEntering(XRBaseInteractor interactor)
@@ -39,10 +51,41 @@ public class XROffsetGrabInteractable : XRGrabInteractable
 
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
-        if (transform.parent.TryGetComponent<ObjectInteraction>(out ObjectInteraction _parentObject))
+        if (parentObj.TryGetComponent<ObjectInteraction>(out ObjectInteraction _parentObject))
         {
             _parentObject.SetNewValue();
         }
         base.OnSelectExited(interactor);
     }
+
+    protected override void OnHoverEntering(XRBaseInteractor interactor)
+    {
+        if(parentObj.TryGetComponent<ObjectInteraction>(out ObjectInteraction _objInteraction)){
+            _objInteraction.SetObjectHighlight(true);
+            Debug.Log("Highlight Object!");
+        }
+        base.OnHoverEntering(interactor);
+    }
+
+    protected override void OnHoverEntered(XRBaseInteractor interactor)
+    {
+        if(parentObj.TryGetComponent<ObjectInteraction>(out ObjectInteraction _objInteraction))
+        {
+            interactionAudio.clip = _objInteraction.hoverSound;
+            interactionAudio.Play();
+        }
+
+        base.OnHoverEntered(interactor);
+    }
+
+    protected override void OnHoverExited(XRBaseInteractor interactor)
+    {
+        if (parentObj.TryGetComponent<ObjectInteraction>(out ObjectInteraction _objInteraction))
+        {
+            _objInteraction.SetObjectHighlight(false);
+            Debug.Log("Highlight Object!");
+        }
+        base.OnHoverExited(interactor);
+    }
+
 }

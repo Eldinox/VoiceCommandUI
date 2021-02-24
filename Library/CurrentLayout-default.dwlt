@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Console
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 362}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 577, y: 82}
   m_MaxSize: {x: 16002, y: 8042}
   vertical: 1
-  controlID: 143
+  controlID: 155
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 577, y: 82}
   m_MaxSize: {x: 16002, y: 8042}
   vertical: 0
-  controlID: 144
+  controlID: 156
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 302, y: 82}
   m_MaxSize: {x: 12002, y: 8042}
   vertical: 1
-  controlID: 145
+  controlID: 157
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 302, y: 41}
   m_MaxSize: {x: 12002, y: 4021}
   vertical: 0
-  controlID: 146
+  controlID: 158
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -407,18 +407,18 @@ MonoBehaviour:
       y: 21
       width: 230
       height: 906
-    m_Scale: {x: 1.1350485, y: 1.1350485}
-    m_Translation: {x: 111.28881, y: 453}
+    m_Scale: {x: 1.1000061, y: 1.1000061}
+    m_Translation: {x: 118.93942, y: 453}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -98.04762
-      y: -399.1019
-      width: 202.6345
-      height: 798.2038
+      x: -108.126144
+      y: -411.8159
+      width: 209.08975
+      height: 823.6318
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 230, y: 927}
@@ -456,9 +456,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 223e0000
-      m_LastClickedID: 15906
-      m_ExpandedIDs: 2cc8ffff46c8ffff5afbffff1e3d00004a3d0000003e0000323e0000643e0000
+      m_SelectedIDs: c0f60000
+      m_LastClickedID: 63168
+      m_ExpandedIDs: 1c8cfeffde43ffffa8bbffffaabbffffd8faffff4efbffff5afbffff1e3d00004a3d00004e3d0000983d0000fc3d0000323e0000903e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -519,9 +519,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.17977521, y: 0.9030376, z: 1.8128294}
+    m_Target: {x: -0.10169518, y: 0.8566376, z: 1.8028294}
     speed: 2
-    m_Value: {x: -0.17977521, y: 0.9030376, z: 1.8128294}
+    m_Value: {x: -0.10169518, y: 0.8566376, z: 1.8028294}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -568,13 +568,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.3
   m_Rotation:
-    m_Target: {x: 0.13356268, y: 0.12216592, z: -0.016592998, w: 0.9833407}
+    m_Target: {x: 0.23323826, y: 0.18735757, z: -0.045849267, w: 0.9530993}
     speed: 2
-    m_Value: {x: 0.13356283, y: 0.12216606, z: -0.016593017, w: 0.9833418}
+    m_Value: {x: 0.23323788, y: 0.18735726, z: -0.04584919, w: 0.9530977}
   m_Size:
-    m_Target: 0.40496346
+    m_Target: 0.24055128
     speed: 2
-    m_Value: 0.40496346
+    m_Value: 0.24055128
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -809,21 +809,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 67
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: 67
   m_LastProjectPath: C:\Users\Soeren\ownCloud\3 UnityProjekte\VoiceCommandUI-master\VoiceCommandUI
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f6400000
-    m_LastClickedID: 16630
-    m_ExpandedIDs: 00000000f4400000f6400000f8400000fa400000fc400000fe40000000ca9a3b
+    m_SelectedIDs: 7e410000
+    m_LastClickedID: 16766
+    m_ExpandedIDs: 00000000f4400000f8400000fa400000fc400000fe40000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -876,8 +876,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 223e0000
-    m_LastClickedInstanceID: 15906
+    m_SelectedInstanceIDs: f6f50000
+    m_LastClickedInstanceID: 62966
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000d82a0000a02900002c320000462e000066390000de530000603900004c3e0000a8470000709a00006844000006b70f009a3d000000000000be5f000062640000e2700000c4410000bc410000
     m_RenameOverlay:
@@ -956,12 +956,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 1021
-    width: 1666
+    width: 1791
     height: 338
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 15906
+  m_LastSelectedObjectID: 62966
 --- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -984,17 +984,17 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 784
-    width: 1300
-    height: 255
+    y: 1021
+    width: 1791
+    height: 338
   m_ViewDataDictionary: {fileID: 0}
   m_VertSplit:
-    ID: 194
+    ID: 20819
     splitterInitialOffset: 122
     currentActiveSplitter: -1
     realSizes:
-    - 100
-    - 134
+    - 136
+    - 181
     relativeSizes:
     - 0.42918456
     - 0.57081544
@@ -1004,7 +1004,7 @@ MonoBehaviour:
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 234
+    lastTotalSize: 317
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   - id: 10
   - id: 11
   - id: 12
-  m_CallstackRecordMode: 0
+  m_CallstackRecordMode: 1
   m_ClearOnPlay: 1
   references:
     version: 1

@@ -5,9 +5,15 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using System.Runtime.CompilerServices;
 
 public class ObjectInteraction : MonoBehaviour
 {
+    [Header("Set Audioclips")]
+    public AudioClip hoverSound;
+    public AudioClip interactionSound;
+
+    [Header("Set GameObjects")]
     public Transform grabTransform;
     public Canvas valDisplay;
 
@@ -18,7 +24,9 @@ public class ObjectInteraction : MonoBehaviour
     public float controllerPosVal;
     public float controllerRotVal;
     public float maxVal =  10.0f;
+    public Color highlightColor;
 
+    public Color startObjColor;
     public float valRange;
     public Text valText;
 
@@ -61,6 +69,10 @@ public class ObjectInteraction : MonoBehaviour
             {
                 Debug.Log("ObjectInteraction.cs: Tag not set on " + transform.name + ".");
             }
+        }
+        if (grabTransform.TryGetComponent<Renderer>(out Renderer _controllerRend))
+        {
+            startObjColor = _controllerRend.material.color;
         }
 
     }
@@ -135,4 +147,16 @@ public class ObjectInteraction : MonoBehaviour
 
     }
 
+    public void SetObjectHighlight(bool _isActive)
+    {
+        Renderer _rendererCol = grabTransform.GetComponent<Renderer>();
+        if (_isActive)
+        {
+            _rendererCol.material.color = highlightColor;
+        }
+        if (!_isActive)
+        {
+            _rendererCol.material.color = startObjColor;
+        }
+    }
 }
