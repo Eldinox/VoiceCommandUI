@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\HandPresence.cs" />
     <Compile Include="Assets\_emigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Scripts\ObjectInteraction.cs" />
+    <Compile Include="Assets\Scripts\ProgramStatus.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

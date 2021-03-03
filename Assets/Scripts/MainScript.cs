@@ -23,6 +23,9 @@ public class MainScript : MonoBehaviour
     [Header("Information")]
     public GameObject currentAdjustableObj;
 
+    [Header("Position of User")]
+    public GameObject userPosition;
+
     private bool userIsInteracting = false;
     private bool studyStarted = false;
     private bool taskActive = false;
@@ -69,6 +72,7 @@ public class MainScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (studyStarted && !taskActive)
         {
             timeToCompleteTask = 0;
@@ -92,6 +96,7 @@ public class MainScript : MonoBehaviour
                 timeToCompleteTask += Time.deltaTime;
             }
         }
+        */
     }
 
     private void GenerateNewTask()
@@ -211,4 +216,27 @@ public class MainScript : MonoBehaviour
 
     }
 
+    public List<GameObject> GetAdjustableObjects()
+    {
+        List<GameObject> _adjustableObjects = new List<GameObject>();
+        if ( adjustableObjs != null)
+        {
+            List<GameObject> _adjustableGameObjects = adjustableObjs;
+        }
+        else
+        {
+            Debug.Log("MainScript.cs: There are no adjustable Objects!");
+        }
+        return adjustableObjs;
+    }
+
+    public Vector3 GetUserPosition()
+    {
+        Vector3 _userPosition = new Vector3();
+        if (userPosition != null)
+        {
+            _userPosition = userPosition.transform.position;
+        }
+        return _userPosition;
+    }
 }

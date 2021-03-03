@@ -133,6 +133,7 @@ public class ObjectInteraction : MonoBehaviour
         return _currentVal;
     }
 
+    /*
     public void SetNewValue()
     {
         MainScript _Main = GameObject.Find("[Main]").GetComponent<MainScript>();
@@ -144,7 +145,19 @@ public class ObjectInteraction : MonoBehaviour
                 _Main.SetValueOfUser(GetCurrentValue());
             }
         }
+    }
+    */
 
+    public void SetNewVal()
+    {
+        GameObject _ProgramManager = GameObject.Find("ProgramManager");
+        if (_ProgramManager != null)
+        {
+            if (transform.name == _ProgramManager.GetComponent<ProgramStatus>().currentAdjustableObj.name)
+            {
+                _ProgramManager.GetComponent<ProgramStatus>().SetValueOfUser(GetCurrentValue());
+            }
+        }
     }
 
     public void SetObjectHighlight(bool _isActive)

@@ -53,7 +53,7 @@ public class XROffsetGrabInteractable : XRGrabInteractable
     {
         if (parentObj.TryGetComponent<ObjectInteraction>(out ObjectInteraction _parentObject))
         {
-            _parentObject.SetNewValue();
+            _parentObject.SetNewVal();
         }
         base.OnSelectExited(interactor);
     }
